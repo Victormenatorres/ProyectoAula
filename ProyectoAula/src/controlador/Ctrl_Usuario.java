@@ -29,10 +29,6 @@ public class Ctr_Usuario {
         }
         JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
         return false;
-        
-        
-        
-        
     }
 
     // Carga inicial de algunos usuarios para probar el login
@@ -58,19 +54,19 @@ public class Ctr_Usuario {
         listaUsuarios.add(u2);
     }
 
-       
-    // CORREGIR
-    
-    public boolean registrarNuevoUsuario(Usuario nuevo) { // Validar si ya existe el nombre de usuario for (Usuario u : listaUsuarios) { if (u.getUsuario().equalsIgnoreCase(nuevo.getUsuario())) { JOptionPane.showMessageDialog(null, "El nombre de usuario ya está en uso."); return false; } }
+    public boolean registrarNuevoUsuario(Usuario nuevo) {
+        for (Usuario u : listaUsuarios) {
+            if (u.getUsuario().equalsIgnoreCase(nuevo.getUsuario())) {
+                JOptionPane.showMessageDialog(null, "El nombre de usuario ya está en uso.");
+                return false;
+            }
+        }
 
-
-// Asignar ID automático (opcional)
-nuevo.setIdUsuario(listaUsuarios.size() + 1);
-nuevo.setEstado(1); // Activo por defecto
-listaUsuarios.add(nuevo);
-JOptionPane.showMessageDialog(null, "Usuario registrado con éxito.");
-return true;
+        // Asignar ID automático (opcional)
+        nuevo.setIdUsuario(listaUsuarios.size() + 1);
+        nuevo.setEstado(1); // Activo por defecto
+        listaUsuarios.add(nuevo);
+        JOptionPane.showMessageDialog(null, "Usuario registrado con éxito.");
+        return true;
+    }
 }
-     //
-}
-
