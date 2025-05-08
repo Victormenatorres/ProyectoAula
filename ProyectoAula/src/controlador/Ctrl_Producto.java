@@ -9,11 +9,7 @@ public class Ctrl_Producto {
     // Lista para almacenar los productos
     private List<Producto> productos = new ArrayList<>();
 
-    /**
-     * **************************************************
-     * Metodo para guardar un nuevo producto en la lista
-     * **************************************************
-     */
+    
     public boolean guardar(Producto objeto) {
         boolean respuesta = false;
         // Agregar el producto a la lista
@@ -24,11 +20,11 @@ public class Ctrl_Producto {
         return respuesta;
     }
 
-    /**
-     * ********************************************************************
-     * Metodo para consultar si el producto ya está registrado en la lista
-     * ********************************************************************
-     */
+    
+   
+   //  Metodo para consultar si el producto ya está registrado en la lista
+  
+
     public boolean existeProducto(String producto) {
         boolean respuesta = false;
         // Buscar en la lista si el producto ya existe
