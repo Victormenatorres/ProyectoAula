@@ -6,20 +6,29 @@ import modelo.Usuario;
 
 public class Ctr_Usuario {
 
-    // Lista simulando una base de datos de usuarios
+    // Instancia única (Singleton)
+    private static Ctr_Usuario instancia;
     private ArrayList<Usuario> listaUsuarios;
 
-    public Ctr_Usuario() {
+    // Constructor privado para evitar instancias externas
+    private Ctr_Usuario() {
         listaUsuarios = new ArrayList<>();
         cargarUsuariosDePrueba();
     }
 
-    // Método para validar login
+    // Método para obtener la única instancia
+    public static Ctr_Usuario getInstance() {
+        if (instancia == null) {
+            instancia = new Ctr_Usuario();
+        }
+        return instancia;
+    }
+
     public boolean validarLogin(String usuario, String contraseña) {
         for (Usuario u : listaUsuarios) {
             if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
                 if (u.getEstado() == 1) {
-                    JOptionPane.showMessageDialog(null, " Bienvenido " + u.getNombre());
+                    JOptionPane.showMessageDialog(null, "Bienvenido " + u.getNombre());
                     return true;
                 } else {
                     JOptionPane.showMessageDialog(null, "El usuario está inactivo.");
@@ -31,7 +40,6 @@ public class Ctr_Usuario {
         return false;
     }
 
-    // Carga inicial de algunos usuarios para probar el login
     private void cargarUsuariosDePrueba() {
         Usuario u1 = new Usuario();
         u1.setIdUsuario(1);
@@ -40,7 +48,7 @@ public class Ctr_Usuario {
         u1.setUsuario("admin");
         u1.setContraseña("1234567");
         u1.setTelefono("123456789");
-        u1.setEstado(1); // activo
+        u1.setEstado(1);
         listaUsuarios.add(u1);
 
         Usuario u2 = new Usuario();
@@ -50,7 +58,7 @@ public class Ctr_Usuario {
         u2.setUsuario("victor");
         u2.setContraseña("12345678");
         u2.setTelefono("987654321");
-        u2.setEstado(0); // inactivo
+        u2.setEstado(0);
         listaUsuarios.add(u2);
     }
 
@@ -61,12 +69,24 @@ public class Ctr_Usuario {
                 return false;
             }
         }
-
-        // Asignar ID automático (opcional)
         nuevo.setIdUsuario(listaUsuarios.size() + 1);
-        nuevo.setEstado(1); // Activo por defecto
+        nuevo.setEstado(1);
         listaUsuarios.add(nuevo);
         JOptionPane.showMessageDialog(null, "Usuario registrado con éxito.");
         return true;
+    }
+
+    public void mostrarUsuarios() {
+        if (listaUsuarios.isEmpty()) {
+            System.out.println("No hay usuarios registrados.");
+        } else {
+            for (Usuario u : listaUsuarios) {
+                System.out.println("ID: " + u.getIdUsuario() + ", Usuario: " + u.getUsuario() + ", Estado: " + (u.getEstado() == 1 ? "Activo" : "Inactivo"));
+            }
+        }
+    }
+
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
     }
 }

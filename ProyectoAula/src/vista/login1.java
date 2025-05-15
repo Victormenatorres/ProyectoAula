@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package vista;
 
 import controlador.Ctr_Usuario;
@@ -9,17 +8,17 @@ import javax.swing.JOptionPane;
  *
  * @author JOSE
  */
-public class login extends javax.swing.JFrame {
+public class login1 extends javax.swing.JFrame {
 
     static Ctr_Usuario getControlador() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-      Ctr_Usuario controladorUsuario = new Ctr_Usuario();
+Ctr_Usuario controladorUsuario = Ctr_Usuario.getInstance();
     /**
      * Creates new form login
      */
-    public login() {
+    public login1() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -28,27 +27,7 @@ public class login extends javax.swing.JFrame {
         this.setSize(new Dimension(700, 500));
         
         
-=======
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package vista;
-
-/**
- *
- * @author Nathaly Mena T
- */
-public class FrmLogin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FrmLogin
-     */
-    public FrmLogin() {
-        initComponents();
->>>>>>> 4f244b325f75d2d2abe97547946d01a48c051149
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,7 +37,6 @@ public class FrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -234,36 +212,18 @@ public class FrmLogin extends javax.swing.JFrame {
     if (acceso) {
         JOptionPane.showMessageDialog(this, "Acceso concedido");
         // Aquí puedes abrir una nueva ventana
-    }
+    }                                                    
 
   
     }//GEN-LAST:event_jButton_IniciarSesionActionPerformed
 
     private void jButtonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearCuentaActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: b
         
         new vista.new_account().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCrearCuentaActionPerformed
 
-=======
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
->>>>>>> 4f244b325f75d2d2abe97547946d01a48c051149
     /**
      * @param args the command line arguments
      */
@@ -281,40 +241,27 @@ public class FrmLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-<<<<<<< HEAD
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-=======
-            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
->>>>>>> 4f244b325f75d2d2abe97547946d01a48c051149
+            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< HEAD
-                new login().setVisible(true);
-=======
-                new FrmLogin().setVisible(true);
->>>>>>> 4f244b325f75d2d2abe97547946d01a48c051149
+                new login1().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
     private javax.swing.JButton jButtonCrearCuenta;
     private javax.swing.JButton jButton_IniciarSesion;
     private javax.swing.JLabel jLabel1;
@@ -327,7 +274,5 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txt_contraseña;
     private javax.swing.JTextField txt_usuario;
-=======
->>>>>>> 4f244b325f75d2d2abe97547946d01a48c051149
     // End of variables declaration//GEN-END:variables
 }
