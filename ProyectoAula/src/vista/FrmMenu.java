@@ -105,12 +105,22 @@ public class FrmMenu extends javax.swing.JFrame {
         MenuItem_Nuevo_Producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nuevo-producto.png"))); // NOI18N
         MenuItem_Nuevo_Producto.setText("Nuevo Producto");
         MenuItem_Nuevo_Producto.setPreferredSize(new java.awt.Dimension(200, 30));
+        MenuItem_Nuevo_Producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItem_Nuevo_ProductoActionPerformed(evt);
+            }
+        });
         jMenu2.add(MenuItem_Nuevo_Producto);
 
         MenuItem_Gestionar_Productos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         MenuItem_Gestionar_Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/producto.png"))); // NOI18N
         MenuItem_Gestionar_Productos.setText("Gestionar Productos");
         MenuItem_Gestionar_Productos.setPreferredSize(new java.awt.Dimension(200, 30));
+        MenuItem_Gestionar_Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItem_Gestionar_ProductosActionPerformed(evt);
+            }
+        });
         jMenu2.add(MenuItem_Gestionar_Productos);
 
         MenuItem_Actualizar_Stock.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -285,6 +295,18 @@ public class FrmMenu extends javax.swing.JFrame {
         jDesktopPane_menu.add(interGestionarCategoria);
         interGestionarCategoria.setVisible(true);
     }//GEN-LAST:event_MenuItem_Gestionar_CategoriasActionPerformed
+
+    private void MenuItem_Gestionar_ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_Gestionar_ProductosActionPerformed
+        InterGestionarProducto interGestionarProducto = new InterGestionarProducto();
+        jDesktopPane_menu.add(interGestionarProducto);
+        interGestionarProducto.setVisible(true);
+    }//GEN-LAST:event_MenuItem_Gestionar_ProductosActionPerformed
+
+    private void MenuItem_Nuevo_ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_Nuevo_ProductoActionPerformed
+   InterProducto interProducto = new InterProducto();
+        jDesktopPane_menu.add(interProducto);
+        interProducto.setVisible(true);
+    }//GEN-LAST:event_MenuItem_Nuevo_ProductoActionPerformed
 
     /**
      * @param args the command line arguments
