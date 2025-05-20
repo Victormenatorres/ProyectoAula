@@ -5,9 +5,25 @@ import java.util.List;
 import modelo.Categoria;
 
 public class Ctrl_Categoria {
-
+ 
     // Simulando una base de datos con una lista
     public static List<Categoria> listaCategorias = new ArrayList<>();
+       static {
+        // Datos iniciales de ejemplo - reemplaza con tus categorías reales
+       listaCategorias.add(new Categoria(1, "Electrónicos", 1));
+        listaCategorias.add(new Categoria(2, "Alimentos", 1));
+        listaCategorias.add(new Categoria(3, "Bebidas", 1));
+    }
+    
+    public List<Categoria> obtenerCategoriasActivas() {
+        List<Categoria> activas = new ArrayList<>();
+        for(Categoria cat : listaCategorias) {
+            if(cat.getEstado() == 1) {
+                activas.add(cat);
+            }
+        }
+        return activas;
+    }
 
     public boolean guardar(Categoria objeto) {
         boolean respuesta = false;
@@ -61,4 +77,38 @@ public class Ctrl_Categoria {
         }
         return false;
     }
+    // Obtener ID de categoría por descripción
+
+
+public int obtenerIdCategoriaPorNombre(String nombreCategoria) {
+    for (Categoria cat : listaCategorias) {
+        if (cat.getDescripcion().equalsIgnoreCase(nombreCategoria)) {
+            return cat.getIdCategoria();
+        }
+    }
+    return -1; // No encontrada
+}
+
+
+  // Método para obtener ID por nombre
+    public int obtenerIdPorDescripcion(String descripcion) {
+        for (Categoria cat : listaCategorias) {
+            if (cat.getDescripcion().equalsIgnoreCase(descripcion)) {
+                return cat.getIdCategoria();
+            }
+        }
+        return -1; // Retorna -1 si no encuentra
+    }
+    
+    // Método para obtener nombre por ID
+    public String obtenerNombreCategoriaPorId(int idCategoria) {
+        for (Categoria cat : listaCategorias) {
+            if (cat.getIdCategoria() == idCategoria) {
+                return cat.getDescripcion();
+            }
+        }
+        return "Sin categoría";
+    }
+
+
 }
